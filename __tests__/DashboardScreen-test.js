@@ -9,8 +9,6 @@ import { Provider } from "react-redux";
 import { render, screen, fireEvent } from "@testing-library/react-native";
 import configureStore from "../app/store/configureStore";
 
-// Note: test renderer must be required after react-native.
-import renderer from "react-test-renderer";
 jest.useFakeTimers();
 
 describe("Dashboard Screen ", () => {

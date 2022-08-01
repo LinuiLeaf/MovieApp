@@ -10,7 +10,6 @@ import { Image } from "react-native";
 import { shallow, configure, mount } from "enzyme";
 import { Provider } from "react-redux";
 import store from "../app/store/configureStore";
-// Note: test renderer must be required after react-native.
 import renderer from "react-test-renderer";
 import { render, container, screen } from "@testing-library/react-native";
 import { toHaveStyle } from "@testing-library/jest-native";

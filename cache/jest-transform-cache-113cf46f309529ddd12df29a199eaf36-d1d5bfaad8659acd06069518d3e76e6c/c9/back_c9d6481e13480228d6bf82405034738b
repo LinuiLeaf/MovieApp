@@ -1,0 +1,5 @@
+6c3824d8dca7ed88553d03cab7401dcd
+module.exports = {
+      testUri:
+        "../../../app/assets/images/back.png"
+    };

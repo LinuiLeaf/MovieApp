@@ -1,0 +1,36 @@
+87cc3bd5d104681c053e60b875f04843
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.loadingReducer = void 0;
+
+var _defineProperty2 = _interopRequireDefault(require("@babel/runtime/helpers/defineProperty"));
+
+var _extends2 = _interopRequireDefault(require("@babel/runtime/helpers/extends"));
+
+var types = _interopRequireWildcard(require("../actions/types"));
+
+var _createReducer2 = _interopRequireDefault(require("../lib/createReducer"));
+
+var _createReducer;
+
+function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
+
+function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+var initialState = {
+  isLoading: false
+};
+var loadingReducer = (0, _createReducer2.default)(initialState, (_createReducer = {}, (0, _defineProperty2.default)(_createReducer, types.ENABLE_LOADER, function (state) {
+  return (0, _extends2.default)({}, state, {
+    isLoading: true
+  });
+}), (0, _defineProperty2.default)(_createReducer, types.DISABLE_LOADER, function (state) {
+  return (0, _extends2.default)({}, state, {
+    isLoading: false
+  });
+}), _createReducer));
+exports.loadingReducer = loadingReducer;
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJuYW1lcyI6WyJpbml0aWFsU3RhdGUiLCJpc0xvYWRpbmciLCJsb2FkaW5nUmVkdWNlciIsImNyZWF0ZVJlZHVjZXIiLCJ0eXBlcyIsIkVOQUJMRV9MT0FERVIiLCJzdGF0ZSIsIkRJU0FCTEVfTE9BREVSIl0sInNvdXJjZXMiOlsibG9hZGluZ1JlZHVjZXIuanMiXSwic291cmNlc0NvbnRlbnQiOlsiLyoqXG4gKiBDcmVhdGVkIG9uIEp1bHkgMTYsIDIwMjJcbiAqIExvYWRpbmcgUmVkdWNlciAtIEhhbmRsZXMgbG9hZGluZyBzdGF0ZS5cbiAqL1xuXG5pbXBvcnQgKiBhcyB0eXBlcyBmcm9tICcuLi9hY3Rpb25zL3R5cGVzJztcbmltcG9ydCBjcmVhdGVSZWR1Y2VyIGZyb20gJy4uL2xpYi9jcmVhdGVSZWR1Y2VyJztcblxuY29uc3QgaW5pdGlhbFN0YXRlID0ge1xuICBpc0xvYWRpbmc6IGZhbHNlLFxufTtcblxuZXhwb3J0IGNvbnN0IGxvYWRpbmdSZWR1Y2VyID0gY3JlYXRlUmVkdWNlcihpbml0aWFsU3RhdGUsIHtcbiAgW3R5cGVzLkVOQUJMRV9MT0FERVJdKHN0YXRlKSB7XG4gICAgcmV0dXJuIHsgLi4uc3RhdGUsIGlzTG9hZGluZzogdHJ1ZSB9O1xuICB9LFxuICBbdHlwZXMuRElTQUJMRV9MT0FERVJdKHN0YXRlKSB7XG4gICAgcmV0dXJuIHsgLi4uc3RhdGUsIGlzTG9hZGluZzogZmFsc2UgfTtcbiAgfSxcbn0pO1xuIl0sIm1hcHBpbmdzIjoiOzs7Ozs7Ozs7OztBQUtBOztBQUNBOzs7Ozs7OztBQUVBLElBQU1BLFlBQVksR0FBRztFQUNuQkMsU0FBUyxFQUFFO0FBRFEsQ0FBckI7QUFJTyxJQUFNQyxjQUFjLEdBQUcsSUFBQUMsdUJBQUEsRUFBY0gsWUFBZCxzRUFDM0JJLEtBQUssQ0FBQ0MsYUFEcUIsWUFDTkMsS0FETSxFQUNDO0VBQzNCLGtDQUFZQSxLQUFaO0lBQW1CTCxTQUFTLEVBQUU7RUFBOUI7QUFDRCxDQUgyQixpREFJM0JHLEtBQUssQ0FBQ0csY0FKcUIsWUFJTEQsS0FKSyxFQUlFO0VBQzVCLGtDQUFZQSxLQUFaO0lBQW1CTCxTQUFTLEVBQUU7RUFBOUI7QUFDRCxDQU4yQixtQkFBdkIifQ==

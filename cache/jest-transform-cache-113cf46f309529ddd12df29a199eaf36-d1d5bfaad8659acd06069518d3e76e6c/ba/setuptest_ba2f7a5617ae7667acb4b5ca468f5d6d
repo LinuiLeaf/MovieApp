@@ -1,0 +1,22 @@
+96c009dfac5a2b220f22f4ba58bf0748
+_getJestObj().mock("@react-native-async-storage/async-storage", function () {
+  return _asyncStorageMock.default;
+});
+
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+
+require("react-native");
+
+var _asyncStorageMock = _interopRequireDefault(require("@react-native-async-storage/async-storage/jest/async-storage-mock"));
+
+function _getJestObj() {
+  var _require = require("@jest/globals"),
+      jest = _require.jest;
+
+  _getJestObj = function _getJestObj() {
+    return jest;
+  };
+
+  return jest;
+}
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJuYW1lcyI6WyJtb2NrIiwibW9ja0FzeW5jU3RvcmFnZSJdLCJzb3VyY2VzIjpbInNldHVwLXRlc3QuanMiXSwic291cmNlc0NvbnRlbnQiOlsiLy9zZXR1cCAtIHRlc3RzLmpzO1xuXG5pbXBvcnQgXCJyZWFjdC1uYXRpdmVcIjtcblxuaW1wb3J0IG1vY2tBc3luY1N0b3JhZ2UgZnJvbSBcIkByZWFjdC1uYXRpdmUtYXN5bmMtc3RvcmFnZS9hc3luYy1zdG9yYWdlL2plc3QvYXN5bmMtc3RvcmFnZS1tb2NrXCI7XG5cbmplc3QubW9jayhcIkByZWFjdC1uYXRpdmUtYXN5bmMtc3RvcmFnZS9hc3luYy1zdG9yYWdlXCIsICgpID0+IG1vY2tBc3luY1N0b3JhZ2UpO1xuIl0sIm1hcHBpbmdzIjoiQUFNQSxjQUFLQSxJQUFMLENBQVUsMkNBQVYsRUFBdUQ7RUFBQSxPQUFNQyx5QkFBTjtBQUFBLENBQXZEOzs7O0FBSkE7O0FBRUEifQ==

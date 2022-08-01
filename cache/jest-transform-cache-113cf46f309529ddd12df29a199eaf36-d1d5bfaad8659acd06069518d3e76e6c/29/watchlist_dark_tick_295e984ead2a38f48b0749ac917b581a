@@ -1,0 +1,5 @@
+b86227c4902bada35f4ba1ba9bdc0ded
+module.exports = {
+      testUri:
+        "../../../app/assets/images/watchlist_dark_tick.png"
+    };

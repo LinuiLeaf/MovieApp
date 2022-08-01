@@ -1,0 +1,41 @@
+6cea08a57a01cd33e283eca526b8c104
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = api;
+
+var _extends2 = _interopRequireDefault(require("@babel/runtime/helpers/extends"));
+
+var _apiConstants = _interopRequireDefault(require("./apiConstants"));
+
+function api(path, params, method, token) {
+  var apiUrl = _apiConstants.default.BASE_URL + path;
+
+  if (method === 'GET' || method === 'get') {
+    apiUrl = apiUrl + params + '?' + 'api_key=' + _apiConstants.default.API_KEY;
+    console.log('API GET METHOD URL: ===', apiUrl);
+  }
+
+  var options;
+  options = (0, _extends2.default)({
+    headers: {
+      Accept: 'application/json',
+      'Content-Type': 'application/json'
+    },
+    method: method
+  }, method !== 'get' && params && {
+    body: JSON.stringify(params)
+  });
+  return new Promise(function (resolve, reject) {
+    fetch(apiUrl, options).then(function (response) {
+      return response.json();
+    }).then(function (jsonResponse) {
+      return resolve(jsonResponse);
+    }).catch(function (error) {
+      return reject(error);
+    });
+  });
+}
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJuYW1lcyI6WyJhcGkiLCJwYXRoIiwicGFyYW1zIiwibWV0aG9kIiwidG9rZW4iLCJhcGlVcmwiLCJBcGlDb25zdGFudHMiLCJCQVNFX1VSTCIsIkFQSV9LRVkiLCJjb25zb2xlIiwibG9nIiwib3B0aW9ucyIsImhlYWRlcnMiLCJBY2NlcHQiLCJib2R5IiwiSlNPTiIsInN0cmluZ2lmeSIsIlByb21pc2UiLCJyZXNvbHZlIiwicmVqZWN0IiwiZmV0Y2giLCJ0aGVuIiwicmVzcG9uc2UiLCJqc29uIiwianNvblJlc3BvbnNlIiwiY2F0Y2giLCJlcnJvciJdLCJzb3VyY2VzIjpbImluZGV4LmpzIl0sInNvdXJjZXNDb250ZW50IjpbIi8qKlxuICogQ3JlYXRlZCBvbiBKdWx5IDE3LCAyMDIyXG4gKiBBUEkgbWFpbiBtZXRob2QgR2VuZXJhbCBhcGkgdG8gYWNjZXMgZGF0YSBmcm9tIHdlYlxuICovXG5cbmltcG9ydCBBcGlDb25zdGFudHMgZnJvbSAnLi9hcGlDb25zdGFudHMnO1xuXG5leHBvcnQgZGVmYXVsdCBmdW5jdGlvbiBhcGkocGF0aCwgcGFyYW1zLCBtZXRob2QsIHRva2VuKSB7XG4gIGxldCBhcGlVcmwgPSBBcGlDb25zdGFudHMuQkFTRV9VUkwgKyBwYXRoO1xuICBpZiAobWV0aG9kID09PSAnR0VUJyB8fCAobWV0aG9kID09PSAnZ2V0JykpIHtcbiAgICBhcGlVcmwgPSBhcGlVcmwgKyBwYXJhbXMgKyAnPycgKyAnYXBpX2tleT0nICsgQXBpQ29uc3RhbnRzLkFQSV9LRVk7XG4gICAgY29uc29sZS5sb2coJ0FQSSBHRVQgTUVUSE9EIFVSTDogPT09JywgYXBpVXJsKTtcbiAgfVxuXG4gIGxldCBvcHRpb25zO1xuICBvcHRpb25zID0ge1xuICAgIGhlYWRlcnM6IHtcbiAgICAgIEFjY2VwdDogJ2FwcGxpY2F0aW9uL2pzb24nLFxuICAgICAgJ0NvbnRlbnQtVHlwZSc6ICdhcHBsaWNhdGlvbi9qc29uJyxcbiAgICB9LFxuICAgIG1ldGhvZDogbWV0aG9kLFxuICAgIC4uLihtZXRob2QgIT09ICdnZXQnICYmIHBhcmFtcyAmJiB7IGJvZHk6IEpTT04uc3RyaW5naWZ5KHBhcmFtcykgfSksXG4gIH07XG5cbiAgcmV0dXJuIG5ldyBQcm9taXNlKChyZXNvbHZlLCByZWplY3QpID0+IHtcbiAgICBmZXRjaChhcGlVcmwsIG9wdGlvbnMpXG4gICAgICAudGhlbihyZXNwb25zZSA9PiB7XG4gICAgICAgIHJldHVybiByZXNwb25zZS5qc29uKCk7XG4gICAgICB9KVxuICAgICAgLnRoZW4oanNvblJlc3BvbnNlID0+IHJlc29sdmUoanNvblJlc3BvbnNlKSlcbiAgICAgIC5jYXRjaChlcnJvciA9PiByZWplY3QoZXJyb3IpKTtcbiAgfSk7XG59XG4iXSwibWFwcGluZ3MiOiI7Ozs7Ozs7OztBQUtBOztBQUVlLFNBQVNBLEdBQVQsQ0FBYUMsSUFBYixFQUFtQkMsTUFBbkIsRUFBMkJDLE1BQTNCLEVBQW1DQyxLQUFuQyxFQUEwQztFQUN2RCxJQUFJQyxNQUFNLEdBQUdDLHFCQUFBLENBQWFDLFFBQWIsR0FBd0JOLElBQXJDOztFQUNBLElBQUlFLE1BQU0sS0FBSyxLQUFYLElBQXFCQSxNQUFNLEtBQUssS0FBcEMsRUFBNEM7SUFDMUNFLE1BQU0sR0FBR0EsTUFBTSxHQUFHSCxNQUFULEdBQWtCLEdBQWxCLEdBQXdCLFVBQXhCLEdBQXFDSSxxQkFBQSxDQUFhRSxPQUEzRDtJQUNBQyxPQUFPLENBQUNDLEdBQVIsQ0FBWSx5QkFBWixFQUF1Q0wsTUFBdkM7RUFDRDs7RUFFRCxJQUFJTSxPQUFKO0VBQ0FBLE9BQU87SUFDTEMsT0FBTyxFQUFFO01BQ1BDLE1BQU0sRUFBRSxrQkFERDtNQUVQLGdCQUFnQjtJQUZULENBREo7SUFLTFYsTUFBTSxFQUFFQTtFQUxILEdBTURBLE1BQU0sS0FBSyxLQUFYLElBQW9CRCxNQUFwQixJQUE4QjtJQUFFWSxJQUFJLEVBQUVDLElBQUksQ0FBQ0MsU0FBTCxDQUFlZCxNQUFmO0VBQVIsQ0FON0IsQ0FBUDtFQVNBLE9BQU8sSUFBSWUsT0FBSixDQUFZLFVBQUNDLE9BQUQsRUFBVUMsTUFBVixFQUFxQjtJQUN0Q0MsS0FBSyxDQUFDZixNQUFELEVBQVNNLE9BQVQsQ0FBTCxDQUNHVSxJQURILENBQ1EsVUFBQUMsUUFBUSxFQUFJO01BQ2hCLE9BQU9BLFFBQVEsQ0FBQ0MsSUFBVCxFQUFQO0lBQ0QsQ0FISCxFQUlHRixJQUpILENBSVEsVUFBQUcsWUFBWTtNQUFBLE9BQUlOLE9BQU8sQ0FBQ00sWUFBRCxDQUFYO0lBQUEsQ0FKcEIsRUFLR0MsS0FMSCxDQUtTLFVBQUFDLEtBQUs7TUFBQSxPQUFJUCxNQUFNLENBQUNPLEtBQUQsQ0FBVjtJQUFBLENBTGQ7RUFNRCxDQVBNLENBQVA7QUFRRCJ9

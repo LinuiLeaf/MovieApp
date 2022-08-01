@@ -1,0 +1,5 @@
+b5f01886dd43741d120460db57dd8a6e
+module.exports = {
+      testUri:
+        "../../../app/assets/images/watchlist_white.png"
+    };

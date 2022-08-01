@@ -1,0 +1,67 @@
+08d231c07ecd3d77b7f789fe4198a80d
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+
+var _regenerator = _interopRequireDefault(require("@babel/runtime/regenerator"));
+
+require("react-native");
+
+var _react = _interopRequireDefault(require("react"));
+
+var _DashboardScreen = _interopRequireDefault(require("../app/screens/Dashboard/DashboardScreen"));
+
+var _reactRedux = require("react-redux");
+
+var _reactNative2 = require("@testing-library/react-native");
+
+var _configureStore2 = _interopRequireDefault(require("../app/store/configureStore"));
+
+var _reactTestRenderer = _interopRequireDefault(require("react-test-renderer"));
+
+jest.useFakeTimers();
+describe("Dashboard Screen ", function () {
+  var _configureStore = (0, _configureStore2.default)(),
+      store = _configureStore.store;
+
+  var component = _react.default.createElement(_reactRedux.Provider, {
+    store: store
+  }, _react.default.createElement(_DashboardScreen.default, null));
+
+  (0, _reactNative2.render)(component);
+  var dashboardState = store.getState();
+  test("Snapshot ", function () {
+    expect(component).toMatchSnapshot();
+  });
+  it("Render without any crash", function () {
+    expect(component).toBeTruthy();
+  });
+  it("return correct  state", function () {
+    expect(dashboardState.dashboardReducer).toEqual(expect.objectContaining({
+      mostViewedItems: []
+    }));
+  });
+  it("should execute onPress method", function _callee() {
+    var _await$render, getByAltText, button;
+
+    return _regenerator.default.async(function _callee$(_context) {
+      while (1) {
+        switch (_context.prev = _context.next) {
+          case 0:
+            _context.next = 2;
+            return _regenerator.default.awrap((0, _reactNative2.render)(_react.default.createElement(MovieDetails, null)));
+
+          case 2:
+            _await$render = _context.sent;
+            getByAltText = _await$render.getByAltText;
+            button = _reactNative2.screen.getByTestId("watchlist");
+            (0, _reactNative2.fireEvent)(button("watchlist"), "onPress");
+            expect(onPress).toHaveBeenCalledTimes(1);
+
+          case 7:
+          case "end":
+            return _context.stop();
+        }
+      }
+    }, null, null, null, Promise);
+  });
+});
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJuYW1lcyI6WyJqZXN0IiwidXNlRmFrZVRpbWVycyIsImRlc2NyaWJlIiwiY29uZmlndXJlU3RvcmUiLCJzdG9yZSIsImNvbXBvbmVudCIsInJlbmRlciIsImRhc2hib2FyZFN0YXRlIiwiZ2V0U3RhdGUiLCJ0ZXN0IiwiZXhwZWN0IiwidG9NYXRjaFNuYXBzaG90IiwiaXQiLCJ0b0JlVHJ1dGh5IiwiZGFzaGJvYXJkUmVkdWNlciIsInRvRXF1YWwiLCJvYmplY3RDb250YWluaW5nIiwibW9zdFZpZXdlZEl0ZW1zIiwiZ2V0QnlBbHRUZXh0IiwiYnV0dG9uIiwic2NyZWVuIiwiZ2V0QnlUZXN0SWQiLCJmaXJlRXZlbnQiLCJvblByZXNzIiwidG9IYXZlQmVlbkNhbGxlZFRpbWVzIl0sInNvdXJjZXMiOlsiRGFzaGJvYXJkU2NyZWVuLXRlc3QuanMiXSwic291cmNlc0NvbnRlbnQiOlsiLyoqXG4gKiBAZm9ybWF0XG4gKi9cblxuaW1wb3J0IFwicmVhY3QtbmF0aXZlXCI7XG5pbXBvcnQgUmVhY3QgZnJvbSBcInJlYWN0XCI7XG5pbXBvcnQgRGFzaGJvYXJkU2NyZWVuIGZyb20gXCIuLi9hcHAvc2NyZWVucy9EYXNoYm9hcmQvRGFzaGJvYXJkU2NyZWVuXCI7XG5pbXBvcnQgeyBQcm92aWRlciB9IGZyb20gXCJyZWFjdC1yZWR1eFwiO1xuaW1wb3J0IHsgcmVuZGVyLCBzY3JlZW4sIGZpcmVFdmVudCB9IGZyb20gXCJAdGVzdGluZy1saWJyYXJ5L3JlYWN0LW5hdGl2ZVwiO1xuaW1wb3J0IGNvbmZpZ3VyZVN0b3JlIGZyb20gXCIuLi9hcHAvc3RvcmUvY29uZmlndXJlU3RvcmVcIjtcblxuLy8gTm90ZTogdGVzdCByZW5kZXJlciBtdXN0IGJlIHJlcXVpcmVkIGFmdGVyIHJlYWN0LW5hdGl2ZS5cbmltcG9ydCByZW5kZXJlciBmcm9tIFwicmVhY3QtdGVzdC1yZW5kZXJlclwiO1xuamVzdC51c2VGYWtlVGltZXJzKCk7XG5cbmRlc2NyaWJlKFwiRGFzaGJvYXJkIFNjcmVlbiBcIiwgKCkgPT4ge1xuICBjb25zdCB7IHN0b3JlIH0gPSBjb25maWd1cmVTdG9yZSgpO1xuICBjb25zdCBjb21wb25lbnQgPSAoXG4gICAgPFByb3ZpZGVyIHN0b3JlPXtzdG9yZX0+XG4gICAgICA8RGFzaGJvYXJkU2NyZWVuIC8+XG4gICAgPC9Qcm92aWRlcj5cbiAgKTtcbiAgcmVuZGVyKGNvbXBvbmVudCk7XG4gIGNvbnN0IGRhc2hib2FyZFN0YXRlID0gc3RvcmUuZ2V0U3RhdGUoKTtcbiAgdGVzdChcIlNuYXBzaG90IFwiLCAoKSA9PiB7XG4gICAgZXhwZWN0KGNvbXBvbmVudCkudG9NYXRjaFNuYXBzaG90KCk7XG4gIH0pO1xuICBpdChcIlJlbmRlciB3aXRob3V0IGFueSBjcmFzaFwiLCAoKSA9PiB7XG4gICAgZXhwZWN0KGNvbXBvbmVudCkudG9CZVRydXRoeSgpO1xuICB9KTtcbiAgaXQoXCJyZXR1cm4gY29ycmVjdCAgc3RhdGVcIiwgKCkgPT4ge1xuICAgIGV4cGVjdChkYXNoYm9hcmRTdGF0ZS5kYXNoYm9hcmRSZWR1Y2VyKS50b0VxdWFsKFxuICAgICAgZXhwZWN0Lm9iamVjdENvbnRhaW5pbmcoe1xuICAgICAgICBtb3N0Vmlld2VkSXRlbXM6IFtdLFxuICAgICAgfSlcbiAgICApO1xuICB9KTtcbiAgaXQoXCJzaG91bGQgZXhlY3V0ZSBvblByZXNzIG1ldGhvZFwiLCBhc3luYyAoKSA9PiB7XG4gICAgY29uc3QgeyBnZXRCeUFsdFRleHQgfSA9IGF3YWl0IHJlbmRlcig8TW92aWVEZXRhaWxzIC8+KTtcbiAgICBjb25zdCBidXR0b24gPSBzY3JlZW4uZ2V0QnlUZXN0SWQoXCJ3YXRjaGxpc3RcIik7XG4gICAgZmlyZUV2ZW50KGJ1dHRvbihcIndhdGNobGlzdFwiKSwgXCJvblByZXNzXCIpO1xuICAgIGV4cGVjdChvblByZXNzKS50b0hhdmVCZWVuQ2FsbGVkVGltZXMoMSk7XG4gIH0pO1xufSk7XG4iXSwibWFwcGluZ3MiOiI7Ozs7QUFJQTs7QUFDQTs7QUFDQTs7QUFDQTs7QUFDQTs7QUFDQTs7QUFHQTs7QUFDQUEsSUFBSSxDQUFDQyxhQUFMO0FBRUFDLFFBQVEsQ0FBQyxtQkFBRCxFQUFzQixZQUFNO0VBQ2xDLHNCQUFrQixJQUFBQyx3QkFBQSxHQUFsQjtFQUFBLElBQVFDLEtBQVIsbUJBQVFBLEtBQVI7O0VBQ0EsSUFBTUMsU0FBUyxHQUNiLDZCQUFDLG9CQUFEO0lBQVUsS0FBSyxFQUFFRDtFQUFqQixHQUNFLDZCQUFDLHdCQUFELE9BREYsQ0FERjs7RUFLQSxJQUFBRSxvQkFBQSxFQUFPRCxTQUFQO0VBQ0EsSUFBTUUsY0FBYyxHQUFHSCxLQUFLLENBQUNJLFFBQU4sRUFBdkI7RUFDQUMsSUFBSSxDQUFDLFdBQUQsRUFBYyxZQUFNO0lBQ3RCQyxNQUFNLENBQUNMLFNBQUQsQ0FBTixDQUFrQk0sZUFBbEI7RUFDRCxDQUZHLENBQUo7RUFHQUMsRUFBRSxDQUFDLDBCQUFELEVBQTZCLFlBQU07SUFDbkNGLE1BQU0sQ0FBQ0wsU0FBRCxDQUFOLENBQWtCUSxVQUFsQjtFQUNELENBRkMsQ0FBRjtFQUdBRCxFQUFFLENBQUMsdUJBQUQsRUFBMEIsWUFBTTtJQUNoQ0YsTUFBTSxDQUFDSCxjQUFjLENBQUNPLGdCQUFoQixDQUFOLENBQXdDQyxPQUF4QyxDQUNFTCxNQUFNLENBQUNNLGdCQUFQLENBQXdCO01BQ3RCQyxlQUFlLEVBQUU7SUFESyxDQUF4QixDQURGO0VBS0QsQ0FOQyxDQUFGO0VBT0FMLEVBQUUsQ0FBQywrQkFBRCxFQUFrQztJQUFBOztJQUFBO01BQUE7UUFBQTtVQUFBO1lBQUE7WUFBQSxrQ0FDSCxJQUFBTixvQkFBQSxFQUFPLDZCQUFDLFlBQUQsT0FBUCxDQURHOztVQUFBO1lBQUE7WUFDMUJZLFlBRDBCLGlCQUMxQkEsWUFEMEI7WUFFNUJDLE1BRjRCLEdBRW5CQyxvQkFBQSxDQUFPQyxXQUFQLENBQW1CLFdBQW5CLENBRm1CO1lBR2xDLElBQUFDLHVCQUFBLEVBQVVILE1BQU0sQ0FBQyxXQUFELENBQWhCLEVBQStCLFNBQS9CO1lBQ0FULE1BQU0sQ0FBQ2EsT0FBRCxDQUFOLENBQWdCQyxxQkFBaEIsQ0FBc0MsQ0FBdEM7O1VBSmtDO1VBQUE7WUFBQTtRQUFBO01BQUE7SUFBQTtFQUFBLENBQWxDLENBQUY7QUFNRCxDQTVCTyxDQUFSIn0=

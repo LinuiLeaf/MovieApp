@@ -1,0 +1,5 @@
+6130f724d04029f8cf4d0e3ba0e0db08
+module.exports = {
+      testUri:
+        "../../../app/assets/images/star_white.png"
+    };

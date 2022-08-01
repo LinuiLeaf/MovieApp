@@ -1,0 +1,5 @@
+2802988aa8a775d35dd94849de2d44ac
+module.exports = {
+      testUri:
+        "../../../app/assets/images/star_green.png"
+    };
